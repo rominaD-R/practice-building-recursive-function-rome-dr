@@ -9,13 +9,19 @@
 
 
 function reverseString(string) {
-    if (string.length == 1 || string.length == 0) {
-        console.log(string[0]);
+    if (string.length == 0) {
+        return '';
+    }
+    if (string.length == 1) {
+        // console.log(string[0]);
         return string[0];
     }
-    console.log(string[string.length - 1]);
+    // console.log(string[string.length - 1]);
+    // console.log(string[string.length - 1] + reverseString(string.slice(0, (string.length - 1))));
     // string.pop;
-    return reverseString(string.slice(0, (string.length - 1)));
+    return string[string.length - 1] + reverseString(string.slice(0, (string.length - 1)));
 }
 
-reverseString('abcd');
+console.log(reverseString('under the sea'));
+console.log(reverseString('Wreck-It Ralph'));
+console.log(reverseString(''));
